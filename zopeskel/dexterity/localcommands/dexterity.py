@@ -85,7 +85,7 @@ class ContentDexterityField(DexteritySubTemplate):
     To add fields to schema
     """
     
-    _template_dir = 'templates/dexterity/content'
+    _template_dir = 'templates/dexterity/schemas'
     _insert_template = 'content/+content_class_filename+.py_insert'
     summary = "A schema field adder"
     sub_dir = 'content'

@@ -6,6 +6,7 @@ Changelog
 
 * added ability to add fields to the content type and behavior schema
 
+* moved to zopeskel.dexterity package
 
 1.0a1dev
 --------

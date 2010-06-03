@@ -13,7 +13,7 @@ Add these lines into buildout::
      ZopeSkel
      PasteScript
      PasteDeploy
-     collective.dexteritypaste
+     zopeskel.dexterity
      ${buildout:eggs}
   entry-points = paster=paste.script.command:run
   

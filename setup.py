@@ -3,7 +3,7 @@ import os
 
 version = '1.1a1'
 
-setup(name='collective.dexteritypaste',
+setup(name='zopeskel.dexterity',
       version=version,
       description="Paster templates for dexterity",
       long_description=open("README.txt").read() + "\n" +
@@ -18,10 +18,10 @@ setup(name='collective.dexteritypaste',
       keywords='plone dexterity',
       author='Izhar Firdaus',
       author_email='izhar@inigo-tech.com',
-      url='http://svn.plone.org/svn/collective/collective.dexteritypaste',
+      url='http://svn.plone.org/svn/collective/zopeskel.dexterity',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['collective'],
+      namespace_packages=['zopeskel'],
       include_package_data=True,
       zip_safe=False,
       install_requires=[
@@ -33,14 +33,14 @@ setup(name='collective.dexteritypaste',
       entry_points="""
       # -*- Entry points: -*-
       [paste.paster_create_template]
-      dexterity = collective.dexteritypaste.dexterity:Dexterity
+      dexterity = zopeskel.dexterity.dexterity:Dexterity
 
       [zopeskel.zopeskel_sub_template]
-      dexterity_content = collective.dexteritypaste.localcommands.dexterity:DexterityContent
-      dexterity_content_field = collective.dexteritypaste.localcommands.dexterity:ContentDexterityField
-      dexterity_behavior = collective.dexteritypaste.localcommands.dexterity:DexterityBehavior
-      dexterity_behavior_field = collective.dexteritypaste.localcommands.dexterity:BehaviorDexterityField
-      dexterity_view = collective.dexteritypaste.localcommands.dexterity:DexterityView
+      dexterity_content = zopeskel.dexterity.localcommands.dexterity:DexterityContent
+      dexterity_content_field = zopeskel.dexterity.localcommands.dexterity:ContentDexterityField
+      dexterity_behavior = zopeskel.dexterity.localcommands.dexterity:DexterityBehavior
+      dexterity_behavior_field = zopeskel.dexterity.localcommands.dexterity:BehaviorDexterityField
+      dexterity_view = zopeskel.dexterity.localcommands.dexterity:DexterityView
 
       """,
       )
