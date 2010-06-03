@@ -1,0 +1,21 @@
+    #if $custom_widget 
+    form.widget(${field_name}="${custom_widget}")
+    #end if
+    ${field_name} = ${field_type}(
+        title=u"${field_label}",
+        description=u"${field_desc}",
+        required=${required},
+    #if $field_type == 'RelationList'
+        value_type=RelationChoice(
+            title = _(u"a ${field_label}"),
+    #end if
+    #if $field_type in ('RelationChoice', 'RelationList')
+        source = ObjPathSourceBinder(
+            navigation_tree_query = {'path': {'query':'/'}},
+        ),
+    #end if
+    #if $field_type == 'RelationList'
+        )
+    #end if
+    )
+    

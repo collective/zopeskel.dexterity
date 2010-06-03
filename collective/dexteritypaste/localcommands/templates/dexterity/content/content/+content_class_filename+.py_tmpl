@@ -1,0 +1,16 @@
+from five import grok
+from zope import schema
+from plone.namedfile import field as namedfile
+from z3c.relationfield.schema import RelationChoice, RelationList
+from plone.formwidget.contenttree import ObjPathSourceBinder
+
+from plone.directives import form, dexterity
+
+from ${package_dotted_name} import _
+
+class ${interface_name}(form.Schema):
+    """
+    ${contenttype_description}
+    """
+    
+    # -*- Your Zope schema definitions here ... -*-

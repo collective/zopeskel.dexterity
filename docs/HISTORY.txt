@@ -1,0 +1,13 @@
+Changelog
+=========
+
+1.1a1
+-----
+
+* added ability to add fields to the content type and behavior schema
+
+
+1.0a1dev
+--------
+
+- Initial release

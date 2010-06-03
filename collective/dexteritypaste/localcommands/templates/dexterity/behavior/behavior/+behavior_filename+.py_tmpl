@@ -1,0 +1,31 @@
+from zope.interface import alsoProvides
+from zope.component import adapts
+from zope import schema
+from plone.directives import form
+from plone.dexterity.interfaces import IDexterityContent
+from plone.autoform.interfaces import IFormFieldProvider
+
+from plone.namedfile import field as namedfile
+from z3c.relationfield.schema import RelationChoice, RelationList
+from plone.formwidget.contenttree import ObjPathSourceBinder
+
+
+class ${behavior_interfacename}(form.Schema):
+   """
+      Marker/Form interface for ${behavior_name}
+   """
+   
+   # -*- Your Zope schema definitions here ... -*-
+   
+
+alsoProvides(${behavior_interfacename},IFormFieldProvider)
+
+
+class ${behavior_classname}(object):
+   """
+      Adapter for ${behavior_name}
+   """
+   adapts(IDexterityContent)
+
+   def __init__(self,context):
+       self.context = context

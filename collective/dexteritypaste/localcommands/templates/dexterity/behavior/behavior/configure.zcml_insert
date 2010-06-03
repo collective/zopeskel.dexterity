@@ -1,0 +1,9 @@
+
+    <plone:behavior
+        title="${behavior_name}"
+        description="${behavior_description}"
+        provides="${behavior_short_dottedinterface}"
+        factory="${behavior_short_dottedadapter}"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
