@@ -5,9 +5,11 @@ Changelog
 -----
 
 * added ability to add fields to the content type and behavior schema
+  [vangheem]
 
-* moved to zopeskel.dexterity package
-
+* moved to zopeskel.dexterity package from collective.dexteritypaste
+  [vangheem]
+  
 1.0a1dev
 --------
 
