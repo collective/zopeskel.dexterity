@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.x (Unreleased)
+----------------
+
+* Added note about Paster and potentially missing eggs to readme
+  [davidjb]
+
 1.1a1
 -----
 

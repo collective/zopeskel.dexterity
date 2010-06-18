@@ -50,4 +50,25 @@ Adding a field to a behavior schema::
 
   cd /path/to/product/root
   /path/to/paster addcontent dexterity_behavior_field
+ 
+Note
+====
+
+If you hit and error like this::
+
+  pkg_resources.DistributionNotFound: plone.app.relationfield: Not Found for: my.product (did you run python setup.py develop?) 
+
+when attempting to run `paster addcontent`, then you need to ensure that
+Paster knows about all the relevant eggs from your buildout.
+
+Add `${instance:eggs}` to your `paster` section in your buildout, thusly::
+
+  [paster]
+  recipe = zc.recipe.egg
+  eggs = 
+     ...
+     ${instance:eggs}
+  entry-points = paster=paste.script.command:run
   
+where `instance` is the name of your ``plone.recipe.zope2instance`` section.
+Re-run the buildout and the issue should be resolved.
