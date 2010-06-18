@@ -8,7 +8,7 @@ Add these lines into buildout::
      paster
   
   [paster]
-  eggs = zc.recipe.egg
+  recipe = zc.recipe.egg
   eggs = 
      ZopeSkel
      PasteScript
