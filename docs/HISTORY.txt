@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.x (Unreleased)
-----------------
+1.1b1 ~ 2010-06-21
+------------------
 
 * Correcting date type fields to use schema.Date rather than schema.Datetime.
   Using Datetime caused an incorrect widget being used, leading to
