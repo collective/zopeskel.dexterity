@@ -84,7 +84,7 @@ class ContentDexterityField(DexteritySubTemplate):
     """
     To add fields to schema
     """
-    
+
     _template_dir = 'templates/dexterity/schemas'
     _insert_template = 'content/+content_class_filename+.py_insert'
     summary = "A schema field adder"
@@ -99,7 +99,7 @@ class ContentDexterityField(DexteritySubTemplate):
                'password' : 'schema.Password',
                'int' : 'schema.Int',
                'float' : 'schema.Float',
-               'date' : 'schema.Datetime',
+               'date' : 'schema.Date',
                'datetime' : 'schema.Datetime',
                'file' : 'namedfile.NamedFile',
                'blobfile' : 'namedfile.NamedBlobFile',
@@ -108,16 +108,16 @@ class ContentDexterityField(DexteritySubTemplate):
                'relation' : 'RelationChoice',
                'relationlist' : 'RelationList'
     }
-    
+
     custom_widgets = {
         'richtext' : 'plone.app.z3cform.wysiwyg.WysiwygFieldWidget',
-        'date' : 'collective.z3cform.datetimewidget.widget.DateFieldWidget',
-        'datetime' : 'collective.z3cform.datetimewidget.widget.DatetimeFieldWidget'
+        'date' : 'collective.z3cform.datetimewidget.DateFieldWidget',
+        'datetime' : 'collective.z3cform.datetimewidget.DatetimeFieldWidget'
     }
 
     vars = [
-        var('content_class_filename',      
-            'What is the module (file)name of your content class?',           
+        var('content_class_filename',
+            'What is the module (file)name of your content class?',
             default='example'),
         var('field_type',
             'What type of field do you want to use? Options are [%s]' % ', '.join(t for t in typemap),
@@ -184,17 +184,17 @@ class ContentDexterityField(DexteritySubTemplate):
             vars['custom_widget'] = False
 
         vars['field_type'] = self.typemap[vars['field_type']]
-        
+
         if vars['required'].lower() in ('false', 'true'):
             vars['required'] = vars['required'].lower().capitalize()
         else:
             vars['required'] = 'False'
 
         vars['field_name'] = vars['field_name'].replace(' ', '_').replace('-', '_')
-            
+
         vars['content_class_filename'] = file
-    
-    
+
+
 class BehaviorDexterityField(ContentDexterityField):
-    
+
     sub_dir = 'behavior'

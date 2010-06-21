@@ -3,8 +3,8 @@
     form.widget(${field_name}="${custom_widget}")
     #end if
     ${field_name} = ${field_type}(
-        title=u"${field_label}",
-        description=u"${field_desc}",
+        title=_(u"${field_label}"),
+        description=_(u"${field_desc}"),
         required=${required},
     #if $field_type == 'RelationList'
         value_type=RelationChoice(
