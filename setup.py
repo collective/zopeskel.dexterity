@@ -27,9 +27,10 @@ setup(name='zopeskel.dexterity',
       install_requires=[
           'setuptools',
           'PasteScript',
-          'ZopeSkel',
+          'ZopeSkel'
           # -*- Extra requirements: -*-
       ],
+      setup_requires=["PasteScript"],
       entry_points="""
       # -*- Entry points: -*-
       [paste.paster_create_template]
