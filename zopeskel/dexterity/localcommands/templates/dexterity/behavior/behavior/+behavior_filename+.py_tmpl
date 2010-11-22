@@ -9,23 +9,25 @@ from plone.namedfile import field as namedfile
 from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
+from ${package_dotted_name} import _
+
 
 class ${behavior_interfacename}(form.Schema):
-   """
-      Marker/Form interface for ${behavior_name}
-   """
+    """
+       Marker/Form interface for ${behavior_name}
+    """
    
-   # -*- Your Zope schema definitions here ... -*-
-   
+    # -*- Your Zope schema definitions here ... -*-
+
 
 alsoProvides(${behavior_interfacename},IFormFieldProvider)
 
 
 class ${behavior_classname}(object):
-   """
-      Adapter for ${behavior_name}
-   """
-   adapts(IDexterityContent)
+    """
+       Adapter for ${behavior_name}
+    """
+    adapts(IDexterityContent)
 
-   def __init__(self,context):
-       self.context = context
+    def __init__(self,context):
+        self.context = context
