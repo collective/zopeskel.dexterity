@@ -1,4 +1,4 @@
-from zope.interface import alsoProvides
+from zope.interface import alsoProvides, implements
 from zope.component import adapts
 from zope import schema
 from plone.directives import form
@@ -22,12 +22,23 @@ class ${behavior_interfacename}(form.Schema):
 
 alsoProvides(${behavior_interfacename},IFormFieldProvider)
 
+def context_property(name):
+    def getter(self):
+        return getattr(self.context, name)
+    def setter(self, value):
+        setattr(self.context, name, value)
+    def deleter(self):
+        delattr(self.context, name)
+    return property(getter, setter, deleter)
 
 class ${behavior_classname}(object):
     """
        Adapter for ${behavior_name}
     """
+    implements(${behavior_interfacename})
     adapts(IDexterityContent)
 
     def __init__(self,context):
         self.context = context
+
+    # -*- Your behavior property setters & getters here ... -*-

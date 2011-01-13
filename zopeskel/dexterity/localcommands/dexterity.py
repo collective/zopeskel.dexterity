@@ -143,7 +143,7 @@ class ContentDexterityField(DexteritySubTemplate):
         """
         return super(ContentDexterityField, self).check_vars(*args, **kwargs)
 
-    def run(self, command, output_dir, vars):
+    def apply(self, command, output_dir, vars):
         """
         By-passing the base run so I can do multiple inserts
         with different marker names
@@ -169,6 +169,8 @@ class ContentDexterityField(DexteritySubTemplate):
         schema_insert = str(cheetah_template(schema_insert_template, vars))+"\n"
         command.insert_into_file(os.path.join(command.dest_dir(), self.sub_dir, '%s.py' % (vars['content_class_filename'])), self.marker_name, schema_insert)
 
+    def run(self, command, output_dir, vars):
+        self.apply(command, output_dir, vars)
         self.post(command, output_dir, vars)
 
 
@@ -198,3 +200,13 @@ class ContentDexterityField(DexteritySubTemplate):
 class BehaviorDexterityField(ContentDexterityField):
 
     sub_dir = 'behavior'
+    behavior_marker_name = 'Your behavior property setters & getters here ...'
+
+    def apply(self, command, output_dir, vars):
+        super(BehaviorDexterityField, self).apply(command, output_dir, vars)
+
+        schema_insert = ("    %(field_name)s =" + 
+                        " context_property('%(field_name)s')\n") % vars
+        command.insert_into_file(os.path.join(command.dest_dir(), self.sub_dir,
+                                '%s.py' % (vars['content_class_filename'])),
+                                self.behavior_marker_name, schema_insert)
