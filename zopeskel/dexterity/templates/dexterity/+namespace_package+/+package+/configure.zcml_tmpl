@@ -6,16 +6,18 @@
     xmlns:grok="http://namespaces.zope.org/grok"
     i18n_domain="${namespace_package}.${package}">
 
-    <!-- Include configuration for dependencies listed in setup.py -->
-    <includeDependencies package="." />
-    <!-- Grok the package to initialise schema interfaces and content classes -->
-    <grok:grok package="." />
+  <!-- Include configuration for dependencies listed in setup.py -->
+  <includeDependencies package="." />
 
+  <!-- Grok the package to initialise schema interfaces and content classes -->
+  <grok:grok package="." />
+  
   <i18n:registerTranslations directory="locales" />
 
-    <!-- Register an extension profile to make the product installable -->
   <include package=".behavior" />
 
+  <!-- Register an extension profile to make the product installable
+       in Plone -->
   <genericsetup:registerProfile
       name="default"
       title="${description or None}"
