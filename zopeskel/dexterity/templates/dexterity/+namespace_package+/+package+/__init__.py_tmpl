@@ -1,3 +1,4 @@
 from zope.i18nmessageid import MessageFactory
 
-_ = MessageFactory('${namespace_package}.${package}')
+# Set up the i18n message factory for our package
+MessageFactory = MessageFactory('${namespace_package}.${package}')

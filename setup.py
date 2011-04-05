@@ -37,8 +37,8 @@ setup(name='zopeskel.dexterity',
       [paste.paster_create_template]
       dexterity = zopeskel.dexterity.dexterity:Dexterity
 
-      # [zopeskel.zopeskel_sub_template]
-      # dexterity_content = zopeskel.dexterity.localcommands.dexterity:DexterityContent
+      [zopeskel.zopeskel_sub_template]
+      dexterity_content = zopeskel.dexterity.localcommands.dexterity:DexterityContent
       # dexterity_content_field = zopeskel.dexterity.localcommands.dexterity:ContentDexterityField
       # dexterity_behavior = zopeskel.dexterity.localcommands.dexterity:DexterityBehavior
       # dexterity_behavior_field = zopeskel.dexterity.localcommands.dexterity:BehaviorDexterityField

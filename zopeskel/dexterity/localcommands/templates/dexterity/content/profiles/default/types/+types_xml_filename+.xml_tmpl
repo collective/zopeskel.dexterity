@@ -17,15 +17,11 @@
   <property name="allowed_content_types" />
   <property name="allow_discussion">${allow_discussion}</property>
 
- <!-- schema interface FIXME: this is ugly -->
- <property name="schema">${package_dotted_name}.content.${content_class_filename}.${interface_name}</property> 
+ <property name="schema">${package_dotted_name}.${content_class_filename}.${interface_name}</property> 
 
  <!-- class used for content items -->
-#if str($folderish) == 'True'
- <property name="klass">plone.dexterity.content.Container</property>
-#else
- <property name="klass">plone.dexterity.content.Item</property>
-#end if
+ <property name="klass">${package_dotted_name}.${content_class_filename}.${contenttype_classname}</property>
+ 
 <!--
   <property name="product">${package_dotted_name}</property>
   <property name="factory">add${contenttype_classname}</property>

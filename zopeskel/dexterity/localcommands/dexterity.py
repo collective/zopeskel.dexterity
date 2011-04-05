@@ -1,5 +1,5 @@
 import os
-from zopeskel.base import var
+from zopeskel.base import var, StringChoiceVar
 from zopeskel.localcommands import ZopeSkelLocalTemplate
 
 from Cheetah.Template import Template as cheetah_template
@@ -22,6 +22,12 @@ class DexterityContent(DexteritySubTemplate):
             default='Description of the Example Type'),
         var('folderish', 'True/False: Content type is Folderish ',
             default=False),
+        StringChoiceVar(
+            'field_def_method',
+            title='Field Definition Method?',
+            description='How would you like to define your fields? (schema/xmlmodel)?',
+            default='xmlmodel',
+            choices=('schema','xmlmodel',),),
         var('global_allow', 'True/False: Globally addable ',
             default=True),
         var('allow_discussion', 'True/False: Allow discussion ',

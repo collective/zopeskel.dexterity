@@ -1,16 +1,26 @@
 from five import grok
+from plone.directives import dexterity, form
+
 from zope import schema
-from plone.namedfile import field as namedfile
-from z3c.relationfield.schema import RelationChoice, RelationList
-from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from plone.directives import form, dexterity
+from z3c.form import group, field
+from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 
-from ${package_dotted_name} import _
+from ${package_dotted_name} import MessageFactory as _
 
 class ${interface_name}(form.Schema):
     """
     ${contenttype_description}
     """
     
-    # -*- Your Zope schema definitions here ... -*-
+    form.model("models/${content_class_filename}.xml")
+
+
+#if str($folderish) == 'True'
+class ${contenttype_classname}(dexterity.Container):
+#else
+class ${contenttype_classname}(dexterity.Item):
+#end if
+    grok.implements(${interface_name})
+    
+    # Add your class methods and properties here

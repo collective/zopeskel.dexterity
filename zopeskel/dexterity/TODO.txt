@@ -1,0 +1,11 @@
+Add boilerplate tests
+
+Eliminate content subdirectory; add content at top of package
+
+Eliminate browser; add templates in contenttype)templates
+
+Eliminate behavior directory; replace w/ file
+
+See if "static" works; if so add a folder
+
+Lower dependencies
