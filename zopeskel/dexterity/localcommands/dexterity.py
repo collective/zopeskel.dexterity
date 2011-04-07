@@ -205,7 +205,7 @@ class BehaviorDexterityField(ContentDexterityField):
     def apply(self, command, output_dir, vars):
         super(BehaviorDexterityField, self).apply(command, output_dir, vars)
 
-        schema_insert = ("    %(field_name)s =" + 
+        schema_insert = ("    %(field_name)s =" +
                         " context_property('%(field_name)s')\n") % vars
         command.insert_into_file(os.path.join(command.dest_dir(), self.sub_dir,
                                 '%s.py' % (vars['content_class_filename'])),
