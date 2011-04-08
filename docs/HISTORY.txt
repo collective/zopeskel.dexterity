@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.2.1 ~ unreleased
-------------------
+1.2.1 ~ 2011-04-28
+-------------------
 
 - Release 1.2 of zopeskel.dexterity is not installable with python2.4
   due to a bug in the tarfile module.  Added setup.cfg that forces
