@@ -1,6 +1,24 @@
 Changelog
 =========
 
+1.2.1 ~ unreleased
+------------------
+
+- Release 1.2 of zopeskel.dexterity is not installable with python2.4
+  due to a bug in the tarfile module.  Added setup.cfg that forces
+  using the --formats=zip option when creating an sdist; this solves
+  the problem on python2.4.
+  [maurits]
+
+
+1.2 ~ 2011-01-13
+----------------
+
+- dexterity_behavior_field localcommand now also adds the relevant
+  setter/getter/deleter in the adapter.
+  [kagesenshi]
+
+
 1.1b2 ~ 2010-11-23
 ------------------
 
