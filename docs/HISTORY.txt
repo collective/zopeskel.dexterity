@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.2.2 ~ 2011-04-18
+-------------------
+
+- Fixed issues when locales folder was lost in the packaging and thus was not able to start Plone 4.1 with the generated product present. Packaging probably prunes empty folders, included a dummy README.txt file there. [mikko ohtamaa]
+
 1.2.1 ~ 2011-04-08
 ------------------
 
