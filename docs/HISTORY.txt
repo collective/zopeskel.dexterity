@@ -1,6 +1,17 @@
 Changelog
 =========
 
+2.0 ~ unreleased
+----------------
+
+- Revise to use filenames that will match those created by dexterity's export
+  buttons. This means removing the dotted filename style.
+  [smcmahon]
+
+- Revise to use grok-style directory structures that will more closely
+  correspond with the dexterity docs.
+  [smcmahon]
+
 1.2.1 ~ unreleased
 ------------------
 

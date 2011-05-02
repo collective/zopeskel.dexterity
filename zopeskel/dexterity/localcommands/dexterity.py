@@ -22,12 +22,12 @@ class DexterityContent(DexteritySubTemplate):
             default='Description of the Example Type'),
         var('folderish', 'True/False: Content type is Folderish ',
             default=False),
-        StringChoiceVar(
-            'field_def_method',
-            title='Field Definition Method?',
-            description='How would you like to define your fields? (schema/xmlmodel)?',
-            default='xmlmodel',
-            choices=('schema','xmlmodel',),),
+        # StringChoiceVar(
+        #     'generate_custom_class',
+        #     title='Add a custom class?',
+        #     description='Create a custom class for the new type?',
+        #     default='no',
+        #     choices=('yes','no',),),
         var('global_allow', 'True/False: Globally addable ',
             default=True),
         var('allow_discussion', 'True/False: Allow discussion ',
@@ -39,9 +39,9 @@ class DexterityContent(DexteritySubTemplate):
         vars['contenttype_classname'] = vars['contenttype_name'].replace(" ", "")
         vars['contenttype_dottedname'] = vars['package_dotted_name'] + '.' + vars['contenttype_classname'].lower()
         vars['schema_name'] = vars['contenttype_classname'] + "Schema"
-        vars['content_class_filename'] = vars['contenttype_classname'].lower()
-        vars['types_xml_filename'] = vars['contenttype_dottedname']
-        vars['interface_name'] = "I" + vars['contenttype_name'].replace(" ", "")
+        vars['content_class_filename'] = vars['contenttype_name'].replace(" ", "-").lower()
+        vars['types_xml_filename'] = vars['content_class_filename']
+        vars['interface_name'] = "I" + vars['contenttype_classname']
         vars['add_permission_name'] = vars['package_dotted_name'] + ': Add ' + vars['contenttype_name']
 
 class DexterityBehavior(DexteritySubTemplate):
