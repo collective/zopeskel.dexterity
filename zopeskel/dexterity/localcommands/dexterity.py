@@ -22,12 +22,6 @@ class DexterityContent(DexteritySubTemplate):
             default='Description of the Example Type'),
         var('folderish', 'True/False: Content type is Folderish ',
             default=False),
-        # StringChoiceVar(
-        #     'generate_custom_class',
-        #     title='Add a custom class?',
-        #     description='Create a custom class for the new type?',
-        #     default='no',
-        #     choices=('yes','no',),),
         var('global_allow', 'True/False: Globally addable ',
             default=True),
         var('allow_discussion', 'True/False: Allow discussion ',

@@ -8,9 +8,9 @@
   <property name="description"
     i18n:translate="">${contenttype_description}</property>
 #if str($folderish) == 'True'
-  <property name="content_icon">folder_icon.gif</property>
+  <property name="icon_expr">string:\${portal_url}/folder_icon.png</property>
 #else
-  <property name="content_icon">document_icon.gif</property>
+  <property name="icon_expr">string:\${portal_url}/document_icon.png</property>
 #end if
   <property name="global_allow">${global_allow}</property>
   <property name="filter_content_types">False</property>  
