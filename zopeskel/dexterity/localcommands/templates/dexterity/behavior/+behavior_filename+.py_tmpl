@@ -9,7 +9,7 @@ from plone.namedfile import field as namedfile
 from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from ${package_dotted_name} import _
+from ${package_dotted_name} import MessageFactory as _
 
 
 class ${behavior_interfacename}(form.Schema):
