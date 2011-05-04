@@ -27,12 +27,10 @@ setup(name=${repr($project)},
       install_requires=[
           'setuptools',
           'plone.app.dexterity',
-          'collective.autopermission',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
-
       [z3c.autoinclude.plugin]
       target = plone
       """,

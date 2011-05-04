@@ -1,8 +1,19 @@
 Changelog
 =========
 
-2.0 ~ unreleased
-----------------
+1.3dev ~ unreleased
+-------------------
+
+- Removed content field and view local command templates. My rationale for
+  removing the field template is that most novice developers should be using 
+  TTW models and taking advantage of supermodel round-tripping. Those who are
+  comfortable with schema fields are probably not likely to be using a tool
+  like ZopeSkel to add them. The rationale for removing the view template is
+  simpler: it's main functionality is now in the content-type template.
+  [smcmahon]
+ 
+- Add sample view definition with addition of a content type.
+  [smcmahon]
 
 - Revise to use filenames that will match those created by dexterity's export
   buttons. This means removing the dotted filename style.

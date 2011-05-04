@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '2.0dev'
+version = '1.3dev'
 
 setup(name='zopeskel.dexterity',
       version=version,
@@ -39,10 +39,6 @@ setup(name='zopeskel.dexterity',
 
       [zopeskel.zopeskel_sub_template]
       dexterity_content = zopeskel.dexterity.localcommands.dexterity:DexterityContent
-      # dexterity_content_field = zopeskel.dexterity.localcommands.dexterity:ContentDexterityField
-      # dexterity_behavior = zopeskel.dexterity.localcommands.dexterity:DexterityBehavior
-      # dexterity_behavior_field = zopeskel.dexterity.localcommands.dexterity:BehaviorDexterityField
-      # dexterity_view = zopeskel.dexterity.localcommands.dexterity:DexterityView
-
+      dexterity_behavior = zopeskel.dexterity.localcommands.dexterity:DexterityBehavior
       """,
       )
