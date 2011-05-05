@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.2.2'
+version = '1.3dev'
 
 setup(name='zopeskel.dexterity',
       version=version,
@@ -16,10 +16,13 @@ setup(name='zopeskel.dexterity',
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone dexterity',
-      author='Izhar Firdaus',
-      author_email='izhar@inigo-tech.com',
+      # Credit original author:
+      # author='Izhar Firdaus',
+      # author_email='izhar@inigo-tech.com',
+      author='ZopeSkel Development Team',
+      author_email='zopeskel@lists.plone.org',
       url='http://svn.plone.org/svn/collective/zopeskel.dexterity',
-      license='GPL',
+      license='GPL 2',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['zopeskel'],
       include_package_data=True,
@@ -27,6 +30,8 @@ setup(name='zopeskel.dexterity',
       install_requires=[
           'setuptools',
           'PasteScript',
+          'PasteDeploy',
+          'Paste',
           'ZopeSkel'
           # -*- Extra requirements: -*-
       ],
@@ -38,10 +43,6 @@ setup(name='zopeskel.dexterity',
 
       [zopeskel.zopeskel_sub_template]
       dexterity_content = zopeskel.dexterity.localcommands.dexterity:DexterityContent
-      dexterity_content_field = zopeskel.dexterity.localcommands.dexterity:ContentDexterityField
       dexterity_behavior = zopeskel.dexterity.localcommands.dexterity:DexterityBehavior
-      dexterity_behavior_field = zopeskel.dexterity.localcommands.dexterity:BehaviorDexterityField
-      dexterity_view = zopeskel.dexterity.localcommands.dexterity:DexterityView
-
       """,
       )

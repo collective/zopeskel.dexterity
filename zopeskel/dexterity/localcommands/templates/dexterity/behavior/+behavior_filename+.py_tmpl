@@ -9,7 +9,7 @@ from plone.namedfile import field as namedfile
 from z3c.relationfield.schema import RelationChoice, RelationList
 from plone.formwidget.contenttree import ObjPathSourceBinder
 
-from ${package_dotted_name} import _
+from ${package_dotted_name} import MessageFactory as _
 
 
 class ${behavior_interfacename}(form.Schema):
@@ -20,8 +20,7 @@ class ${behavior_interfacename}(form.Schema):
     # -*- Your Zope schema definitions here ... -*-
 
 
-alsoProvides(${behavior_interfacename}, IFormFieldProvider)
-
+alsoProvides(${behavior_interfacename},IFormFieldProvider)
 
 def context_property(name):
     def getter(self):
@@ -32,7 +31,6 @@ def context_property(name):
         delattr(self.context, name)
     return property(getter, setter, deleter)
 
-
 class ${behavior_classname}(object):
     """
        Adapter for ${behavior_name}
@@ -40,7 +38,7 @@ class ${behavior_classname}(object):
     implements(${behavior_interfacename})
     adapts(IDexterityContent)
 
-    def __init__(self, context):
+    def __init__(self,context):
         self.context = context
 
     # -*- Your behavior property setters & getters here ... -*-

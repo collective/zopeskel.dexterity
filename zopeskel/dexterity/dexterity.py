@@ -6,7 +6,7 @@ from zopeskel.base import var
 
 class Dexterity(BasicZope):
     _template_dir = 'templates/dexterity'
-    summary = "A dexterity-based product"
+    summary = "A Dexterity-based product"
     help = """
 """
     category = "Plone Development"
@@ -17,5 +17,4 @@ class Dexterity(BasicZope):
     get_var(vars, 'namespace_package').default = 'plone'
     get_var(vars, 'package').default = 'example'
     get_var(vars, 'description').default = 'Example Dexterity Product'
-
-
+    get_var(vars, 'license_name').default = 'GPL version 2'

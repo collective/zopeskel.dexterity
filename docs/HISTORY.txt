@@ -1,12 +1,54 @@
 Changelog
 =========
 
+1.3dev ~ unreleased
+-------------------
+
+- Removed content field and view local command templates. My rationale for
+  removing the field template is that most novice developers should be using 
+  TTW models and taking advantage of supermodel round-tripping. Those who are
+  comfortable with schema fields are probably not likely to be using a tool
+  like ZopeSkel to add them. The rationale for removing the view template is
+  simpler: it's main functionality is now in the content-type template.
+  [smcmahon]
+ 
+- Add sample view definition with addition of a content type.
+  [smcmahon]
+
+- Revise to use filenames that will match those created by dexterity's export
+  buttons. This means removing the dotted filename style.
+  [smcmahon]
+
+- Revise to use grok-style directory structures that will more closely
+  correspond with the dexterity docs.
+  [smcmahon]
+
 1.2.2 ~ 2011-04-18
 -------------------
 
-- Fixed issues when locales folder was lost in the packaging and thus was not able to start Plone 4.1 with the generated product present. Packaging probably prunes empty folders, included a dummy README.txt file there. [mikko ohtamaa]
+- Fixed issues when locales folder was lost in the packaging and thus was not
+  able to start Plone 4.1 with the generated product present. Packaging
+  probably prunes empty folders, included a dummy README.txt file there.
+  [mikko ohtamaa]
 
 1.2.1 ~ 2011-04-08
+------------------
+
+- Release 1.2 of zopeskel.dexterity is not installable with python2.4
+  due to a bug in the tarfile module.  Added setup.cfg that forces
+  using the --formats=zip option when creating an sdist; this solves
+  the problem on python2.4.
+  [maurits]
+
+
+1.2 ~ 2011-01-13
+----------------
+
+- dexterity_behavior_field localcommand now also adds the relevant
+  setter/getter/deleter in the adapter.
+  [kagesenshi]
+
+1.2.1 ~ unreleased
 ------------------
 
 - Release 1.2 of zopeskel.dexterity is not installable with python2.4
