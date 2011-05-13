@@ -1,8 +1,16 @@
 Changelog
 =========
 
-1.3dev ~ unreleased
--------------------
+1.3b2 ~ 2011-05-13
+------------------
+
+- Restore dotted filenames for new content types. Content types in file
+  system addons need to be robustly installable in systems that may already
+  have simple add-on names.
+  [smcmahon]
+
+1.3b1 ~ 2011-05-07
+------------------
 
 - Removed content field and view local command templates. My rationale for
   removing the field template is that most novice developers should be using 

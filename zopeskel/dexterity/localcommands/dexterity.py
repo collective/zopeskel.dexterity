@@ -33,8 +33,8 @@ class DexterityContent(DexteritySubTemplate):
         vars['contenttype_classname'] = vars['contenttype_name'].replace(" ", "")
         vars['contenttype_dottedname'] = vars['package_dotted_name'] + '.' + vars['contenttype_classname'].lower()
         vars['schema_name'] = vars['contenttype_classname'] + "Schema"
-        vars['content_class_filename'] = vars['contenttype_name'].replace(" ", "-").lower()
-        vars['types_xml_filename'] = vars['content_class_filename']
+        vars['content_class_filename'] = vars['contenttype_name'].replace(" ", "_").lower()
+        vars['types_xml_filename'] = vars['contenttype_dottedname']
         vars['interface_name'] = "I" + vars['contenttype_classname']
         vars['add_permission_name'] = vars['package_dotted_name'] + ': Add ' + vars['contenttype_name']
 

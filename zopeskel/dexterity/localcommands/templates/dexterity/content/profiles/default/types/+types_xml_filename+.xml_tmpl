@@ -12,32 +12,31 @@
 #else
   <property name="icon_expr">string:\${portal_url}/document_icon.png</property>
 #end if
+  <property name="factory">${contenttype_dottedname}</property>
   <property name="global_allow">${global_allow}</property>
   <property name="filter_content_types">False</property>  
   <property name="allowed_content_types" />
   <property name="allow_discussion">${allow_discussion}</property>
 
- <property name="schema">${package_dotted_name}.${content_class_filename}.${interface_name}</property> 
+  <!-- schema and class used for content items -->
+  <property name="schema">${package_dotted_name}.${content_class_filename}.${interface_name}</property> 
+  <property name="klass">${package_dotted_name}.${content_class_filename}.${contenttype_classname}</property>
 
- <!-- class used for content items -->
- <property name="klass">${package_dotted_name}.${content_class_filename}.${contenttype_classname}</property>
- 
-<!--
-  <property name="product">${package_dotted_name}</property>
-  <property name="factory">add${contenttype_classname}</property>
--->
- <property name="add_permission">cmf.AddPortalContent</property>
- <property name="behaviors">
+  <property name="behaviors">
      <element value="plone.app.content.interfaces.INameFromTitle" />
      <element value="plone.app.dexterity.behaviors.metadata.IBasic"/>
- </property>
+   </property>
 
   <!-- View information -->
+  <property name="link_target"></property>
+  <property name="immediate_view">view</property>
   <property name="default_view">view</property>
-  <property name="default_view_fallback">False</property>
   <property name="view_methods">
-    <element value="view" />
+   <element value="view"/>
   </property>
+  <property name="default_view_fallback">False</property>
+  <property name="add_permission">cmf.AddPortalContent</property>
+
 
   <!-- Method aliases -->
   <alias from="(Default)" to="(dynamic view)" />
@@ -50,7 +49,6 @@
     url_expr="string:\${object_url}/" visible="True">
     <permission value="View" />
   </action>
-
   <action title="Edit" action_id="edit" category="object" condition_expr=""
     url_expr="string:\${object_url}/edit" visible="True">
     <permission value="Modify portal content" />
