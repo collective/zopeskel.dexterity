@@ -1,18 +1,19 @@
+import doctest
 import unittest
 
-\#from zope.testing import doctestunit
-\#from zope.component import testing
 from Testing import ZopeTestCase as ztc
 
-#if str($zope2product) != 'True'
 from Products.Five import zcml
-#end if
-from Products.Five import fiveconfigure
 from Products.PloneTestCase import PloneTestCase as ptc
 from Products.PloneTestCase.layer import PloneSite
-ptc.setupPloneSite()
+from Products.PloneTestCase.layer import onsetup
 
 import ${namespace_package}.${package}
+
+OPTION_FLAGS = doctest.NORMALIZE_WHITESPACE | \
+               doctest.ELLIPSIS
+
+ptc.setupPloneSite(products=['${namespace_package}.${package}'])
 
 
 class TestCase(ptc.PloneTestCase):
@@ -21,14 +22,8 @@ class TestCase(ptc.PloneTestCase):
 
         @classmethod
         def setUp(cls):
-            fiveconfigure.debug_mode = True
-            #if str($zope2product) == 'True'
-            ztc.installPackage(${namespace_package}.${package})
-            #else
             zcml.load_config('configure.zcml',
-                             ${namespace_package}.${package})
-            #end if
-            fiveconfigure.debug_mode = False
+              ${namespace_package}.${package})
 
         @classmethod
         def tearDown(cls):
@@ -49,12 +44,16 @@ def test_suite():
 
 
         \# Integration tests that use PloneTestCase
-        \#ztc.ZopeDocFileSuite(
-        \#    'README.txt', package='${namespace_package}.${package}',
-        \#    test_class=TestCase),
+        ztc.ZopeDocFileSuite(
+            'INTEGRATION.txt', 
+            package='${namespace_package}.${package}',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
 
         \#ztc.FunctionalDocFileSuite(
-        \#    'browser.txt', package='${namespace_package}.${package}',
+        \#    'BROWSER.TXT',
+        \#    package='${namespace_package}.${package}',
+        \#    optionflags = OPTION_FLAGS,
         \#    test_class=TestCase),
 
         ])
