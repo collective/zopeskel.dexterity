@@ -4,7 +4,9 @@ Changelog
 1.3b4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Changed metadata.xml template to start with an integer of 1 rather than
+  the package version number.
+  [davidjb]
 
 
 1.3b3 ~ 2011-05-13
