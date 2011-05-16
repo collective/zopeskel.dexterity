@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.3b3'
+version = '1.3b4dev'
 
 setup(name='zopeskel.dexterity',
       version=version,
