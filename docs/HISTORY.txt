@@ -1,8 +1,12 @@
 Changelog
 =========
 
-1.3b4 (unreleased)
-------------------
+1.3 ~ 2011-05-22
+----------------
+
+- Added README.txt to static folder in dexterity template.
+  [smcmahon]
+
 
 - Changed metadata.xml template to start with an integer of 1 rather than
   the package version number.

@@ -1,8 +1,8 @@
 Introduction
 ============
 
-Dexterity is a content-type development tool for Plone. It supports Through-
-The-Web and filesystem development of new content types for Plone.
+Dexterity is a content-type development tool for Plone. It supports
+Through-The-Web and filesystem development of new content types for Plone.
 
 zopeskel.dexterity provides a mechanism to quickly create Dexterity add on
 skeletons. It also makes it easy to add new content types to an existing
@@ -37,20 +37,20 @@ And run the buildout
 Usage
 ======
 
-Creating a dexterity product, typically done in your buildout's src
+Creating a dexterity content package, typically done in your buildout's src
 directory::
 
   ../bin/zopeskel dexterity
 
-Adding a contenttype skeleton::
+Adding a content-type skeleton to an existing package::
 
   cd yourbuildout/src/your-product
-  ../bin/paster addcontent dexterity_content
+  ../../bin/paster addcontent dexterity_content
 
 Adding a behavior skeleton::
 
   cd yourbuildout/src/your-product
-  ../bin/paster addcontent dexterity_behavior
+  ../../bin/paster addcontent dexterity_behavior
  
 Notes
 =====
