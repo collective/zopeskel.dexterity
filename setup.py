@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.4'
+version = '1.4.1'
 
 setup(name='zopeskel.dexterity',
       version=version,
@@ -10,12 +10,24 @@ setup(name='zopeskel.dexterity',
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
-        "Programming Language :: Python",
-        "Framework :: Plone",
+        "Development Status :: 5 - Production/Stable",
         "Framework :: Zope3",
+        "Framework :: Plone",
+        "Framework :: Plone :: 4.0",
+        "Framework :: Plone :: 4.1",
+        "Framework :: Plone :: 4.2",
+        "Framework :: Buildout",
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: GNU General Public License (GPL)",
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 2.5",
+        "Programming Language :: Python :: 2.6",
+        "Topic :: Internet :: WWW/HTTP",
+        "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+        "Topic :: Software Development :: Code Generators",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
-      keywords='plone dexterity',
+      keywords='plone dexterity paster templates zopeskel',
       # Credit original author:
       # author='Izhar Firdaus',
       # author_email='izhar@inigo-tech.com',
@@ -32,7 +44,7 @@ setup(name='zopeskel.dexterity',
           'PasteScript',
           'PasteDeploy',
           'Paste',
-          'ZopeSkel'
+          'ZopeSkel<=2.21.2'
           # -*- Extra requirements: -*-
       ],
       setup_requires=["PasteScript"],

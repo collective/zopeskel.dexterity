@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.4.1
+-----
+
+* Fixed issue with ZopeSkel 3.x serie, for moment, it is pinning 
+  version 'ZopeSkel<=2.21.2' as a dependency requirement for install.
+  [macagua]
+
 1.4 ~ 2011-10-29
 ----------------
 
