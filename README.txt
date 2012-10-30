@@ -16,6 +16,10 @@ instance and be ready to start learning to use it.
 Installation
 ============
 
+*zopeskel.dexterity is meant for use with the ZopeSkel 2.x series. It is not 
+compatible with ZopeSkel > 3.0dev (aka Templer). For Dexterity templates
+for use with Templer, use templer.dexterity.*
+
 Add these lines into buildout::
 
   [buildout]
@@ -25,7 +29,7 @@ Add these lines into buildout::
   [zopeskel]
   recipe = zc.recipe.egg
   eggs = 
-     ZopeSkel
+     ZopeSkel < 3.0dev
      Paste
      PasteDeploy
      PasteScript
