@@ -1,0 +1,8 @@
+
+        \# Integration tests for ${contenttype_classname}
+        ztc.ZopeDocFileSuite(
+            '${contenttype_classname}.txt',
+            package='${namespace_package}.${package}',
+            optionflags = OPTION_FLAGS,
+            test_class=TestCase),
+

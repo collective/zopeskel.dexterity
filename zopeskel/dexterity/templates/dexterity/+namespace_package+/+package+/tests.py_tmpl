@@ -45,16 +45,12 @@ def test_suite():
 
         \# Integration tests that use PloneTestCase
         ztc.ZopeDocFileSuite(
-            'INTEGRATION.txt', 
+            'INTEGRATION.txt',
             package='${namespace_package}.${package}',
             optionflags = OPTION_FLAGS,
             test_class=TestCase),
 
-        \#ztc.FunctionalDocFileSuite(
-        \#    'BROWSER.TXT',
-        \#    package='${namespace_package}.${package}',
-        \#    optionflags = OPTION_FLAGS,
-        \#    test_class=TestCase),
+        # -*- extra stuff goes here -*-
 
         ])
 

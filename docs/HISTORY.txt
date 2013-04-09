@@ -8,6 +8,9 @@ development is taking place in templer.dexterity (also in the collective).
 1.5.0 (unreleased)
 ------------------
 
+* Backport rudimentary content type tests from templer.dexterity.
+  [smcmahon]
+
 * Dexterity 2 is deemphasizing the Item type in favor of containers which
   may or may not allow contents. Adjusted question and actions to match.
   [smcmahon]
