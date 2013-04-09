@@ -27,14 +27,14 @@ class ${interface_name}(form.Schema, IImageScaleTraversable):
     """
     ${contenttype_description}
     """
-    
+
     # If you want a schema-defined interface, delete the form.model
     # line below and delete the matching file in the models sub-directory.
     #
     # If you want a model-based interface, edit
     # models/${content_class_filename}.xml to define the content type
     # and add directives here as necessary.
-    
+
     form.model("models/${content_class_filename}.xml")
 
 
@@ -43,13 +43,9 @@ class ${interface_name}(form.Schema, IImageScaleTraversable):
 \# methods and properties. Put methods that are mainly useful for rendering
 \# in separate view classes.
 
-#if str($folderish) == 'True'
 class ${contenttype_classname}(dexterity.Container):
-#else
-class ${contenttype_classname}(dexterity.Item):
-#end if
     grok.implements(${interface_name})
-    
+
     # Add your class methods and properties here
 
 
@@ -66,5 +62,5 @@ class ${contenttype_classname}(dexterity.Item):
 class SampleView(grok.View):
     grok.context(${interface_name})
     grok.require('zope2.View')
-    
+
     \# grok.name('view')

@@ -8,6 +8,10 @@ development is taking place in templer.dexterity (also in the collective).
 1.5.0 (unreleased)
 ------------------
 
+* Dexterity 2 is deemphasizing the Item type in favor of containers which
+  may or may not allow contents. Adjusted question and actions to match.
+  [smcmahon]
+
 * grok no longer has automatic "static" resource directory. Wire in a new
   one with zcml. Name it "resources" to distinguish it from the old grok
   magic. Document in its own readme.
