@@ -16,26 +16,29 @@ instance and be ready to start learning to use it.
 Installation
 ============
 
-*zopeskel.dexterity is meant for use with the ZopeSkel 2.x series. It is not 
+*zopeskel.dexterity is meant for use with the ZopeSkel 2.x series. It is not
 compatible with ZopeSkel > 3.0dev (aka Templer). For Dexterity templates
 for use with Templer, use templer.dexterity.*
+
+*zopeskel.dexterity 1.5+ is meant for use with Plone 4.3+. If you're using an
+earlier version of Plone, pick the latest zopeskel.dexterity 1.4.x.*
 
 Add these lines into buildout::
 
   [buildout]
-  parts = 
+  parts =
      zopeskel
-  
+
   [zopeskel]
   recipe = zc.recipe.egg
-  eggs = 
+  eggs =
      ZopeSkel < 3.0dev
      Paste
      PasteDeploy
      PasteScript
      zopeskel.dexterity
      ${buildout:eggs}
-  
+
 And run the buildout
 
 Usage
@@ -55,7 +58,7 @@ Adding a behavior skeleton::
 
   cd yourbuildout/src/your-product
   ../../bin/paster addcontent dexterity_behavior
- 
+
 Notes
 =====
 
@@ -71,7 +74,7 @@ Errors
 
 If you hit and error like this::
 
-  pkg_resources.DistributionNotFound: plone.app.relationfield: Not Found for: my.product (did you run python setup.py develop?) 
+  pkg_resources.DistributionNotFound: plone.app.relationfield: Not Found for: my.product (did you run python setup.py develop?)
 
 when attempting to run `paster addcontent`, then you need to ensure that
 Paster knows about all the relevant eggs from your buildout.
@@ -80,10 +83,10 @@ Add `${instance:eggs}` to your `paster` section in your buildout, thusly::
 
   [zopeskel]
   recipe = zc.recipe.egg
-  eggs = 
+  eggs =
      ...
      ${instance:eggs}
   entry-points = paster=paste.script.command:run
-  
+
 where `instance` is the name of your ``plone.recipe.zope2instance`` section.
 Re-run the buildout and the issue should be resolved.
