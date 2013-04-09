@@ -6,7 +6,7 @@ version = '1.5.0'
 setup(name='zopeskel.dexterity',
       version=version,
       description="Paster templates for dexterity",
-      long_description=open("README.txt").read() + "\n" +
+      long_description=open("README.rst").read() + "\n" +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
