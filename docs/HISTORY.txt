@@ -5,8 +5,8 @@ zopeskel.dexterity should be regarded as a compatability/maintenance branch of
 the Dexterity templates for use with ZopeSkel <= 3.0dev. All future feature
 development is taking place in templer.dexterity (also in the collective).
 
-1.5.0 (unreleased)
-------------------
+1.5.0 ~ (2013-04-09)
+--------------------
 
 * Backport rudimentary content type tests from templer.dexterity.
   [smcmahon]
@@ -20,8 +20,8 @@ development is taking place in templer.dexterity (also in the collective).
   magic. Document in its own readme.
   [smcmahon]
 
-* Cover Plone 4.3 dependencies. Add "[grok]" to plone.app.dexterity dependency,
-  add plone.app.relationfield dependency.
+* Cover Plone 4.3 dependencies. Add "[grok, relations]" to plone.app.dexterity
+  dependencies.
   [smcmahon]
 
 1.4.1 ~ 2012-12-29
