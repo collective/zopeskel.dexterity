@@ -8,6 +8,11 @@ development is taking place in templer.dexterity (also in the collective).
 1.5.0 (unreleased)
 ------------------
 
+* grok no longer has automatic "static" resource directory. Wire in a new
+  one with zcml. Name it "resources" to distinguish it from the old grok
+  magic. Document in its own readme.
+  [smcmahon]
+
 * Cover Plone 4.3 dependencies. Add "[grok]" to plone.app.dexterity dependency,
   add plone.app.relationfield dependency.
   [smcmahon]
