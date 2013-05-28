@@ -4,16 +4,20 @@
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+#if str($grokish) == 'True'
     xmlns:grok="http://namespaces.zope.org/grok"
+#end if
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="${namespace_package}.${package}">
 
   <!-- Include configuration for dependencies listed in setup.py -->
   <includeDependencies package="." />
 
-  <!-- Grok the package to initialise schema interfaces and content classes -->
+#if str($grokish) == 'True'
+  <!-- Grok the package to initialize schema interfaces and content classes -->
   <grok:grok package="." />
 
+#end if
   <!-- Register a resource directory from which we can deploy static
    resource files. -->
   <browser:resourceDirectory

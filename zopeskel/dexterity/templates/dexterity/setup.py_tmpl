@@ -26,7 +26,11 @@ setup(name=${repr($project)},
       zip_safe=False,
       install_requires=[
           'setuptools',
-          'plone.app.dexterity [grok, relations]',
+#if str($grokish) == 'True'
+          'plone.app.dexterity [grok]',
+#else
+          'plone.app.dexterity',
+#end if
           'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-
       ],
