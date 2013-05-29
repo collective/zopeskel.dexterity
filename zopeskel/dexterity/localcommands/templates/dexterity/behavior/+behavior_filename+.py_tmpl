@@ -1,26 +1,22 @@
-from zope.interface import alsoProvides, implements
-from zope.component import adapts
-from zope import schema
-from plone.directives import form
-from plone.dexterity.interfaces import IDexterityContent
 from plone.autoform.interfaces import IFormFieldProvider
-
-from plone.namedfile import field as namedfile
-from z3c.relationfield.schema import RelationChoice, RelationList
-from plone.formwidget.contenttree import ObjPathSourceBinder
+from plone.dexterity.interfaces import IDexterityContent
+from plone.supermodel import model
+from zope import schema
+from zope.component import adapts
+from zope.interface import alsoProvides, implements
 
 from ${package_dotted_name} import MessageFactory as _
 
 
-class ${behavior_interfacename}(form.Schema):
+class ${behavior_interfacename}(model.Schema):
     """
        Marker/Form interface for ${behavior_name}
     """
-   
+
     # -*- Your Zope schema definitions here ... -*-
 
 
-alsoProvides(${behavior_interfacename},IFormFieldProvider)
+alsoProvides(${behavior_interfacename}, IFormFieldProvider)
 
 def context_property(name):
     def getter(self):
@@ -30,6 +26,7 @@ def context_property(name):
     def deleter(self):
         delattr(self.context, name)
     return property(getter, setter, deleter)
+
 
 class ${behavior_classname}(object):
     """
