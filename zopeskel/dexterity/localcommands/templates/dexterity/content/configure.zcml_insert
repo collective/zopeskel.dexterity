@@ -1,0 +1,14 @@
+#if str($grokish) == 'False'
+    <class class=".${content_class_filename}.${contenttype_classname}">
+        <implements interface=".${content_class_filename}.${interface_name}" />
+    </class>
+
+    <browser:page
+        for=".${content_class_filename}.${interface_name}"
+        name="sampleview"
+        class=".${content_class_filename}.SampleView"
+        template="${content_class_filename}_templates/sampleview.pt"
+        permission="zope2.View"
+        />
+
+#end if

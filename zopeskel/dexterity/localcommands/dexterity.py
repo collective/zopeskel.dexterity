@@ -1,4 +1,5 @@
 import os
+import os.path
 from zopeskel.base import var, StringChoiceVar
 from zopeskel.localcommands import ZopeSkelLocalTemplate
 
@@ -29,7 +30,10 @@ class DexterityContent(DexteritySubTemplate):
         ]
 
     def pre(self, command, output_dir, vars):
-
+        cfg = open(os.path.join(output_dir, 'configure.zcml'))
+        grokish = '<grok:grok package=' in cfg.read()
+        cfg.close()
+        vars['grokish'] = grokish and 'True' or 'False'
         vars['contenttype_classname'] = vars['contenttype_name'].replace(" ", "")
         vars['contenttype_dottedname'] = vars['package_dotted_name'] + '.' + vars['contenttype_classname'].lower()
         vars['schema_name'] = vars['contenttype_classname'] + "Schema"

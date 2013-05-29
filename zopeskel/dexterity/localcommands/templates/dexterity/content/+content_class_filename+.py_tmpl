@@ -1,41 +1,45 @@
+#if str($grokish) == 'True'
 from five import grok
-from plone.directives import dexterity, form
+#end if
 
+from z3c.form import group, field
 from zope import schema
+from zope.interface import invariant, Invalid
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
-from zope.interface import invariant, Invalid
-
-from z3c.form import group, field
-
-from plone.namedfile.interfaces import IImageScaleTraversable
+from plone.dexterity.content import Container
+#if str($grokish) == 'True'
+from plone.directives import dexterity, form
+#end if
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
+from plone.namedfile.interfaces import IImageScaleTraversable
+from plone.supermodel import model
 
 from plone.app.textfield import RichText
 
-from z3c.relationfield.schema import RelationList, RelationChoice
-from plone.formwidget.contenttree import ObjPathSourceBinder
+#if str($grokish) == 'False'
+from Products.Five import BrowserView
+#end if
 
 from ${package_dotted_name} import MessageFactory as _
 
 
 \# Interface class; used to define content-type schema.
 
-class ${interface_name}(form.Schema, IImageScaleTraversable):
+class ${interface_name}(model.Schema, IImageScaleTraversable):
     """
     ${contenttype_description}
     """
 
-    # If you want a schema-defined interface, delete the form.model
+    # If you want a schema-defined interface, delete the model.load
     # line below and delete the matching file in the models sub-directory.
     #
     # If you want a model-based interface, edit
-    # models/${content_class_filename}.xml to define the content type
-    # and add directives here as necessary.
+    # models/${content_class_filename}.xml to define the content type.
 
-    form.model("models/${content_class_filename}.xml")
+    model.load("models/${content_class_filename}.xml")
 
 
 \# Custom content-type class; objects created for this content type will
@@ -43,12 +47,15 @@ class ${interface_name}(form.Schema, IImageScaleTraversable):
 \# methods and properties. Put methods that are mainly useful for rendering
 \# in separate view classes.
 
-class ${contenttype_classname}(dexterity.Container):
+class ${contenttype_classname}(Container):
+#if str($grokish) == 'True'
     grok.implements(${interface_name})
+#end if
 
     # Add your class methods and properties here
 
 
+#if str($grokish) == 'True'
 \# View class
 \# The view will automatically use a similarly named template in
 \# ${content_class_filename}_templates.
@@ -60,7 +67,22 @@ class ${contenttype_classname}(dexterity.Container):
 \# changing the view class name and template filename to View / view.pt.
 
 class SampleView(grok.View):
+    """ sample view class """
+
     grok.context(${interface_name})
     grok.require('zope2.View')
 
     \# grok.name('view')
+
+    \# Add view methods here
+#else
+\# View class
+\# The view is configured in configure.zcml. Edit there to change
+\# its public name. Unless changed, the view will be available
+\# TTW at content/@@sampleview
+
+class SampleView(BrowserView):
+    """ sample view class """
+
+    \# Add view methods here
+#end if
