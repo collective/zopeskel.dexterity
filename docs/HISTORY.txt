@@ -5,6 +5,15 @@ zopeskel.dexterity should be regarded as a compatability/maintenance branch of
 the Dexterity templates for use with ZopeSkel <= 3.0dev. All future feature
 development is taking place in templer.dexterity (also in the collective).
 
+1.5.1 ~ (2013-05-29)
+--------------------
+
+* Offer no-grok option in initial product creation questions.
+  [smcmahon]
+
+* Remove deprecated relations extra.
+  [smcmahon]
+
 1.5.0 ~ (2013-04-09)
 --------------------
 
@@ -27,7 +36,7 @@ development is taking place in templer.dexterity (also in the collective).
 1.4.1 ~ 2012-12-29
 ------------------
 
-* Fixed issue with ZopeSkel 3.x serie, for moment, it is pinning
+* Fixed issue with ZopeSkel 3.x series, for moment, it is pinning
   version 'ZopeSkel<=2.21.2' as a dependency requirement for install.
   [macagua]
 

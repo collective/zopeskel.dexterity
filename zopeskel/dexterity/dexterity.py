@@ -14,7 +14,8 @@ dex_vars = [
         help="""
 Grok is a convention-over-configuration framework that simplifies
 many aspects of the Zope Component Architecture. Grok makes it easier
-to learn and use Dexterity, but it is not part of Plone's core.
+to learn and use Dexterity, but it is not part of Plone's core. The
+Dexterity Developer Manual examples use grok conventions.
 """,
         ),
     ]
