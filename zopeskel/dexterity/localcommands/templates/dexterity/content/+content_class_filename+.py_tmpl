@@ -15,7 +15,9 @@ from plone.directives import dexterity, form
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
+#if str($grokish) == 'False'
 from plone.supermodel import model
+#end if
 
 from plone.app.textfield import RichText
 
@@ -28,7 +30,11 @@ from ${package_dotted_name} import MessageFactory as _
 
 \# Interface class; used to define content-type schema.
 
+#if str($grokish) == 'True'
+class ${interface_name}(form.Schema, IImageScaleTraversable):
+#else
 class ${interface_name}(model.Schema, IImageScaleTraversable):
+#end if
     """
     ${contenttype_description}
     """
@@ -39,7 +45,11 @@ class ${interface_name}(model.Schema, IImageScaleTraversable):
     # If you want a model-based interface, edit
     # models/${content_class_filename}.xml to define the content type.
 
+#if str($grokish) == 'True'
+    form.model("models/${content_class_filename}.xml")
+#else
     model.load("models/${content_class_filename}.xml")
+#end if
 
 
 \# Custom content-type class; objects created for this content type will
