@@ -12,16 +12,18 @@ from plone.dexterity.content import Container
 #if str($grokish) == 'True'
 from plone.directives import dexterity, form
 #end if
+from plone.app.textfield import RichText
 from plone.namedfile.field import NamedImage, NamedFile
 from plone.namedfile.field import NamedBlobImage, NamedBlobFile
 from plone.namedfile.interfaces import IImageScaleTraversable
+
+#if str($relations) == 'True'
+from z3c.relationfield.schema import RelationList, RelationChoice
+from plone.formwidget.contenttree import ObjPathSourceBinder
+
+#end if
 #if str($grokish) == 'False'
 from plone.supermodel import model
-#end if
-
-from plone.app.textfield import RichText
-
-#if str($grokish) == 'False'
 from Products.Five import BrowserView
 #end if
 

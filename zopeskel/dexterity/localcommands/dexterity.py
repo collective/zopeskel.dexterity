@@ -31,9 +31,12 @@ class DexterityContent(DexteritySubTemplate):
 
     def pre(self, command, output_dir, vars):
         cfg = open(os.path.join(output_dir, 'configure.zcml'))
-        grokish = '<grok:grok package=' in cfg.read()
+        zcml = cfg.read()
         cfg.close()
+        grokish = '<grok:grok package=' in zcml
         vars['grokish'] = grokish and 'True' or 'False'
+        relations = 'plone.app.relationfield' in zcml
+        vars['relations'] = relations and 'True' or 'False'
         vars['contenttype_classname'] = vars['contenttype_name'].replace(" ", "")
         vars['contenttype_dottedname'] = vars['package_dotted_name'] + '.' + vars['contenttype_classname'].lower()
         vars['schema_name'] = vars['contenttype_classname'] + "Schema"

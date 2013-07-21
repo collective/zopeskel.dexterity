@@ -18,6 +18,10 @@
   <grok:grok package="." />
 
 #end if
+#if str($relations) == 'True'
+  <include package="plone.app.relationfield" />
+
+#end if
   <!-- Register a resource directory from which we can deploy static
    resource files. -->
   <browser:resourceDirectory
