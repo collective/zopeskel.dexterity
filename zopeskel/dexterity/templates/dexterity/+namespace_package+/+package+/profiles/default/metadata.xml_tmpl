@@ -2,5 +2,8 @@
   <version>1</version>
     <dependencies>
         <dependency>profile-plone.app.dexterity:default</dependency>
+#if str($relations) == 'True'
+        <dependency>profile-plone.app.relationfield:default</dependency>
+#end if
     </dependencies>
 </metadata>

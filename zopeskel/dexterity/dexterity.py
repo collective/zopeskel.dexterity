@@ -18,6 +18,16 @@ to learn and use Dexterity, but it is not part of Plone's core. The
 Dexterity Developer Manual examples use grok conventions.
 """,
         ),
+    BooleanVar('relations',
+        title='Use relations?',
+        description="True/False: include support for relations?",
+        modes=(EASY, EXPERT),
+        default=False,
+        help="""
+Relations support adds support for creating relations between
+content objects. This also is easy to add later.
+""",
+        ),
     ]
 
 

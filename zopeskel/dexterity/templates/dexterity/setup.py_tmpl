@@ -27,9 +27,20 @@ setup(name=${repr($project)},
       install_requires=[
           'setuptools',
 #if str($grokish) == 'True'
+#if str($relations) == 'True'
+          'plone.app.dexterity [grok, relations]',
+#else
           'plone.app.dexterity [grok]',
+#end if
+#else
+#if str($relations) == 'True'
+          'plone.app.dexterity [relations]',
 #else
           'plone.app.dexterity',
+#end if
+#end if
+#if str($relations) == 'True'
+          'plone.app.relationfield',
 #end if
           'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-

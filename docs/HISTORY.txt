@@ -1,9 +1,10 @@
 Changelog
 =========
 
-zopeskel.dexterity should be regarded as a compatability/maintenance branch of
-the Dexterity templates for use with ZopeSkel <= 3.0dev. All future feature
-development is taking place in templer.dexterity (also in the collective).
+1.5.3 ~ (unreleased)
+
+* Restore relations support as an option.
+  [smcmahon]
 
 1.5.2 ~ (2013-06-02)
 --------------------
