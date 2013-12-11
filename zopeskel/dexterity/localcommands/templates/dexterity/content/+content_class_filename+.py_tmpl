@@ -65,6 +65,7 @@ class ${contenttype_classname}(Container):
 #end if
 
     # Add your class methods and properties here
+    pass
 
 
 #if str($grokish) == 'True'

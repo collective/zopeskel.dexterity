@@ -4,7 +4,7 @@ Changelog
 1.5.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- fixed improper code template for Python content class
 
 
 1.5.3 (2013-07-28)
