@@ -1,10 +1,14 @@
 Changelog
 =========
 
-1.5.4 (unreleased)
+1.5.4 (2013-12-11)
 ------------------
 
-- Nothing changed yet.
+- fixed improper code template for Python content class
+- base class of generated content class code was always
+  Container (without taking the 'folderish' value of the
+  configuration into account).
+  [ajung]
 
 
 1.5.3 (2013-07-28)
