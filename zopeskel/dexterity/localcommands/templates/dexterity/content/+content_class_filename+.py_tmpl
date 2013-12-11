@@ -69,7 +69,7 @@ class ${interface_name}(model.Schema, IImageScaleTraversable):
 class ${contenttype_classname}(Container):
 #else
 class ${contenttype_classname}(Item):
-#end
+#end if
 #
 #if str($grokish) == 'True'
     grok.implements(${interface_name})
