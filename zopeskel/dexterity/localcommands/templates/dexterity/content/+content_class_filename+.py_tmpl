@@ -8,7 +8,13 @@ from zope.interface import invariant, Invalid
 from zope.schema.interfaces import IContextSourceBinder
 from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
 
+#if str($folderish) == 'True'
 from plone.dexterity.content import Container
+#else
+from plone.dexterity.content import Item
+#end if
+
+#
 #if str($grokish) == 'True'
 from plone.directives import dexterity, form
 #end if
@@ -59,7 +65,12 @@ class ${interface_name}(model.Schema, IImageScaleTraversable):
 \# methods and properties. Put methods that are mainly useful for rendering
 \# in separate view classes.
 
+#if str($folderish) == 'True'
 class ${contenttype_classname}(Container):
+#else
+class ${contenttype_classname}(Item):
+#end
+#
 #if str($grokish) == 'True'
     grok.implements(${interface_name})
 #end if
