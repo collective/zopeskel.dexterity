@@ -1,0 +1,13 @@
+# place this in your your buildout directory
+[addon]
+packages += ${namespace_package}.${package}
+#test-packages += example.staffprofile[test]
+
+[sources]
+${namespace_package}.${package} = fs ${namespace_package}.${package}
+# this is a package slug, as advocated by the 
+# Plone Newbie Developer Kit (PNDK)
+# 
+
+# see http://tinyurl.com/plone-newbie-dev-kit 
+# for more information
