@@ -55,5 +55,12 @@ setup(name=${repr($project)},
       # your package.
       setup_requires=["PasteScript"],
       paster_plugins = ["ZopeSkel"],
+      extras_require = {
+      'test': [
+            'plone.app.testing',
+            'plone.app.robotframework',
+            'Products.PloneTestCase',
+        ],
+      },
 
       )
