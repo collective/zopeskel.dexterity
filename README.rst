@@ -32,7 +32,7 @@ Add these lines into buildout::
   [zopeskel]
   recipe = zc.recipe.egg
   eggs =
-     ZopeSkel <= 3.0
+     ZopeSkel < 3.0dev
      Paste
      PasteDeploy
      PasteScript
